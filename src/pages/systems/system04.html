@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>步骤四</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  ng-controller="System04Ctrl as system04">
+	<div id="demo">
+		<h6>编辑个人基本信息</h6>
+	</div>
+  <ion-list inset>
+     <ion-item>
+      <ion-label fixed>录入时间：</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+    </ion-item>
+
+  	<ion-item>
+  		<ion-label fixed>出生日期：</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label fixed>姓名：</ion-label>
+  		<ion-input type="text" value=""></ion-input>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label fixed>年龄：</ion-label>
+  		<ion-input type="number"></ion-input>
+  	</ion-item>
+
+  	 <ion-item >
+  		<ion-label fixed>性别：</ion-label>
+      <ion-checkbox>女</ion-checkbox>
+      <ion-checkbox>女</ion-checkbox>
+  		<ion-toggle [(ngModel)]="airplaneMode" toggle-class="toggle-calm">Airplane Mode</ion-toggle>
+  	</ion-item>
+
+  	
+
+
+
+	
+	
+	<!-- 栅格栏 -->
+	<div class="row">
+		<div class="col"><ion-item>
+			<ion-label fixed>姓名：</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label fixed>姓名：</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label fixed>姓名：</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label fixed>姓名：</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label fixed>姓名：</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+	</div>
+	
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label fixed>姓名：</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label fixed>姓名：</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label fixed>姓名：</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label fixed>姓名：</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+    <div>
+    	<button type="button" ion-button block color="secondary" id="addMorePatientInfo">重置</button>
+    	<button type="button" ion-button block color="secondary" (click)="doConfirm()">保存</button>
+    	<button type="submit" ion-button block color="secondary" id="saveAndAssessment">保存并继续营养评估</button>
+    </div>
+  </ion-list>
+</ion-content>
+
+

@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>步骤二</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  ng-controller="System02Ctrl as system02">
+	<div id="demo">
+		<h6>编辑个人基本信息</h6>
+	</div>
+  <div>{{Id}}</div>
+  
+  
+    
+  <ion-list>
+    <button ion-button block color="secondary" (click)="TabDiscoverPage()">体格检查</button>
+    <button ion-button block color="secondary">临床体征检查</button>
+    <button ion-button block color="secondary">生化检查</button>
+    <button ion-button block color="secondary">回顾法膳食调查</button>
+    <button ion-button block color="secondary">肠内营养建议</button>
+    <button ion-button block color="secondary">综合营养评价</button>
+    <!-- ddddddd -->
+    <!-- <ion-item>体格检查</ion-item>
+    <ion-item>临床体征检查</ion-item>
+    <ion-item>生化检查</ion-item>
+    <ion-item>回顾法膳食调查</ion-item>
+    <ion-item>频度法膳食调查</ion-item>
+    <ion-item>综合营养评价</ion-item> -->
+    <ion-item>
+      <ion-label>食谱</ion-label>
+      <ion-select [(ngModel)]="version" (ngModelChange)="version=$event; changeVersion()"
+      cancelText="取消" okText="确认" multiple="true">
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+      <ion-option value="肉">肉</ion-option>
+      <ion-option value="面">面</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+
+
+  <ion-list inset>
+     <ion-item>
+      <ion-label>录入时间：</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+    </ion-item>
+
+  	<ion-item>
+  		<ion-label>出生日期：</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label>姓名</ion-label>
+  		<ion-input (ionBlur)="blurInput()" (ionFocus)="focusInput()" class="input"></ion-input>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label>年龄</ion-label>
+  		<ion-input type="number"></ion-input>
+  	</ion-item>
+
+
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label>性别：</ion-label>
+        <ion-select [(ngModel)]="version" (ngModelChange)="version=$event; changeVersion()"
+        cancelText="取消" okText="确认">
+          <ion-option value="男">男</ion-option>
+          <ion-option value="女">女</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+
+
+
+  	
+
+
+
+	
+	
+	<!-- 栅格栏 -->
+	<div class="row">
+		<div class="col"><ion-item>
+			<ion-label>姓名</ion-label>
+			<ion-input type="text" value="">g</ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label>姓名</ion-label>
+			<ion-input type="text" value="">g</ion-input>
+		</ion-item></div>
+		
+	</div>
+	
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+    <div>
+    	<button type="button" ion-button block color="secondary" id="addMorePatientInfo">重置</button>
+    	<button type="button" ion-button block color="secondary" (click)="doConfirm()">保存</button>
+    	<button type="submit" ion-button block color="secondary" id="saveAndAssessment">保存并继续营养评估</button>
+    </div>
+  </ion-list>
+</ion-content>
+
+

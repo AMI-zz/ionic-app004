@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>步骤一</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  ng-controller="System01Ctrl as system01">
+	<div id="demo">
+		<h6>编辑个人基本信息</h6>
+	</div>
+  <ion-list inset>
+     <ion-item>
+      <ion-label>录入时间</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+    </ion-item>
+
+  	<ion-item>
+  		<ion-label>出生日期</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label>姓名</ion-label>
+  		<ion-input type="text" value=""></ion-input>
+  	</ion-item>
+
+  	<ion-item>
+  		<ion-label>年龄</ion-label>
+  		<ion-input type="number"></ion-input>
+  	</ion-item>
+
+  	<ion-list no-lines>
+      <ion-item>
+        <ion-label>性别：</ion-label>
+        <ion-select [(ngModel)]="version" (ngModelChange)="version=$event; changeVersion()"
+        cancelText="取消" okText="确认">
+        <ion-option value="男">男
+          
+      </ion-option>
+      <ion-option value="女">女</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+
+
+	<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <ion-item [class.error]="!username.valid && username.touched">
+            <ion-label>电话：</ion-label>
+            <ion-input type="tel" placeholder="请输入电话" value="" [formControl]="username" clearInput=true></ion-input>
+        </ion-item>
+        <div *ngIf="username.hasError('required') && username.touched" class="error-message">* 请输入电话</div>
+        <div *ngIf="(username.hasError('minlength')||username.hasError('maxlength')||username.hasError('pattern')) && username.touched" class="error-message">* 请输入正确的电话号码</div>
+        
+        
+        <!-- <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">登录</button> -->
+    
+	<!-- 栅格栏 -->
+	<div class="row">
+		<div class="col"><ion-item>
+			<ion-label>姓名</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		<div class="col"><ion-item>
+			<ion-label>姓名</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item></div>
+		
+	</div>
+	
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row responsive-sm>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>姓名</ion-label>
+        <ion-input type="text" value=""></ion-input>
+        <!-- <textarea name="" id="" maxlength="100" placeholder="aaaaa"></textarea> -->
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+    <div>
+      <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">登录</button>
+    	<button type="button" ion-button block color="secondary" id="addMorePatientInfo">重置</button>
+    	<button type="button" ion-button block color="secondary" (click)="doConfirm()">保存</button>
+    	<button type="submit" ion-button block color="secondary" id="saveAndAssessment">保存并继续营养评估</button>
+    </div>
+    </form>
+  </ion-list>
+</ion-content>
+
+
